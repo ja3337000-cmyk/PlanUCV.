@@ -2195,7 +2195,7 @@ select {
     position: relative;
 
     min-height: 590px;
-
+    background-image: url("./imagenes/portada.jpeg");
     background-image: url("imagenes/portada.jpeg");
     background-size: cover;
     background-position: center;
