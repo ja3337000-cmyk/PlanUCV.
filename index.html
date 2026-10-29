@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PlanUCV | Orientación y planificación académica</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================================= -->
+    <!-- INICIO DE SESIÓN -->
+    <!-- ================================================= -->
+
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-card">
+
+            <!-- IMAGEN DE PORTADA -->
+
+            <div class="login-cover">
+
+                <div class="login-cover-overlay"></div>
+
+                <div class="login-cover-content"><img
+
+                    <strong>
+                        PlanU<span>CV</span>
+                    </strong>
+
+                    <p>
+                        Tu camino universitario
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
+
+            <div class="login-form-panel">
+
+                <div class="login-brand">
+
+                    <strong>
+                        PlanU<span>CV</span>
+                    </strong>
+
+                </div>
+
+                <span class="login-kicker">
+                    ORIENTACIÓN ACADÉMICA
+                </span>
+
+                <h1>
+                    Bienvenido a PlanUCV
+                </h1>
+
+                <p>
+                    Inicia sesión para continuar con tu planificación académica.
+                </p>
+
+                <form id="loginForm">
+
+                    <label>
+                        Usuario o correo
+
+                        <input
+                            id="loginUser"
+                            type="text"
+                            placeholder="Ingresa tu usuario"
+                            autocomplete="username"
+                            required
+                        >
+                    </label>
+
+                    <label>
+                        Contraseña
+
+                        <input
+                            id="loginPassword"
+                            type="password"
+                            placeholder="Ingresa tu contraseña"
+                            autocomplete="current-password"
+                            required
+                        >
+                    </label>
+
+                    <button
+                        type="submit"
+                        class="login-submit"
+                    >
+                        INICIAR SESIÓN
+                        <span>→</span>
+                    </button>
+
+                </form>
+
+                <div class="login-demo">
+                    Sesión local · PlanUCV Demo Académica
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- APLICACIÓN -->
+    <!-- ================================================= -->
+
+    <div class="app">
+
+        <!-- ================================================= -->
+        <!-- SIDEBAR -->
+        <!-- ================================================= -->
+
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">🎓</div>
+
+                <div>
+                    <strong>PlanU<span>CV</span></strong>
+                    <small>Tu camino universitario</small>
+                </div>
+            </div>
+
+            <nav class="main-nav">
+
+                <button class="nav-item active" data-section="inicio">
+                    <span class="nav-icon">⌂</span>
+                    <span>Inicio</span>
+                </button>
+
+                <button class="nav-item" data-section="recomendaciones">
+                    <span class="nav-icon">▦</span>
+                    <span>Recomendaciones</span>
+                </button>
+
+                <button class="nav-item" data-section="horarios">
+                    <span class="nav-icon">▣</span>
+                    <span>Horarios</span>
+                </button>
+
+                <button class="nav-item" data-section="apoyo">
+                    <span class="nav-icon">♧</span>
+                    <span>Apoyo académico</span>
+                </button>
+
+                <button class="nav-item" data-section="perfil">
+                    <span class="nav-icon">♙</span>
+                    <span>Mi perfil</span>
+                </button>
+
+            </nav>
+
+            <div class="sidebar-decoration">
+                <div class="decor-cat">🐱</div>
+
+                <p>
+                    Grandes metas,<br>
+                    pequeños pasos
+                </p>
+
+                <div class="decor-hearts">♡ ✦ ♡</div>
+            </div>
+
+            <div class="sidebar-bottom">
+                <span>PlanUCV v2.0</span>
+                <span class="online-dot">● Sistema activo</span>
+            </div>
+
+        </aside>
+
+
+        <!-- ================================================= -->
+        <!-- MAIN -->
+        <!-- ================================================= -->
+
+        <main class="main-content">
+
+            <!-- TOPBAR -->
+
+            <header class="topbar">
+
+                <div class="mobile-brand">
+                    🎓 <strong>PlanU<span>CV</span></strong>
+                </div>
+
+                <div class="top-search">
+                    <span>⌕</span>
+
+                    <input
+                        id="globalSearch"
+                        type="text"
+                        placeholder="Buscar materias, libros, revistas..."
+                    >
+                </div>
+
+                <div class="top-actions">
+
+                    <button
+                        class="notification-btn"
+                        id="notificationButton"
+                        type="button"
+                    >
+                        ♧
+                        <span id="notificationDot"></span>
+                    </button>
+
+                    <button
+                        class="user-top"
+                        id="userMenuButton"
+                        type="button"
+                    >
+
+                        <div class="avatar" id="topAvatar">R</div>
+
+                        <div>
+                            <strong id="userNameTop">Rosa</strong>
+                            <small>Hola, estudiante</small>
+                        </div>
+
+                        <span>⌄</span>
+
+                    </button>
+
+                    <!-- MENÚ DEL PERFIL -->
+
+                    <div id="userMenu" class="user-menu">
+
+                        <button
+                            type="button"
+                            onclick="cerrarSesion()"
+                        >
+                            ↪ CERRAR SESIÓN
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================================= -->
+            <!-- INICIO -->
+            <!-- ================================================= -->
+
+            <section id="inicio" class="section active-section">
+
+                <div class="hero">
+
+                    <div class="hero-text">
+
+                        <span class="hero-badge">
+                            ✨ PLANIFICACIÓN INTELIGENTE
+                        </span>
+
+                        <h1>
+                            Tu camino<br>
+                            universitario,
+                            <strong>más organizado.</strong>
+                        </h1>
+
+                        <p>
+                            PlanUCV es un hub de orientación y planificación
+                            académica que te ayuda a elegir, organizar y
+                            reforzar tu aprendizaje en un solo lugar.
+                        </p>
+
+                        <div class="hero-buttons">
+
+                            <button
+                                class="btn-primary"
+                                onclick="goToSection('recomendaciones')"
+                            >
+                                Comenzar ahora
+                                <span>→</span>
+                            </button>
+
+                            <button
+                                class="btn-soft"
+                                onclick="goToSection('apoyo')"
+                            >
+                                Explorar apoyo
+                            </button>
+
+                        </div>
+
+                        <div class="hero-mini">
+                            <span>✓ Sin cruces</span>
+                            <span>✓ Recomendaciones</span>
+                            <span>✓ Apoyo académico</span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="hero-art">
+
+                        <div class="city-shape city-one"></div>
+                        <div class="city-shape city-two"></div>
+                        <div class="city-shape city-three"></div>
+
+                        <div class="cloud cloud-one">☁</div>
+                        <div class="cloud cloud-two">☁</div>
+
+                        <div class="star star-one">✦</div>
+                        <div class="star star-two">✧</div>
+                        <div class="star star-three">✦</div>
+
+                        <div class="student-illustration">
+
+                            <div class="hair"></div>
+
+                            <div class="face">
+                                <span class="eye left"></span>
+                                <span class="eye right"></span>
+                                <span class="mouth">⌣</span>
+                            </div>
+
+                            <div class="body">
+                                <div class="shirt"></div>
+                                <div class="arm arm-left"></div>
+                                <div class="arm arm-right"></div>
+                            </div>
+
+                            <div class="laptop-art">
+                                <div class="laptop-screen">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <b>PLANUCV</b>
+                                </div>
+                                <div class="laptop-base"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="floating-book book-one">📚</div>
+                        <div class="floating-book book-two">📖</div>
+                        <div class="floating-heart">♡</div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TARJETAS PRINCIPALES -->
+
+                <div class="home-cards">
+
+                    <article class="feature-card pink-card">
+
+                        <div class="feature-icon">🧠</div>
+
+                        <span>01</span>
+
+                        <h3>Recomendaciones personalizadas</h3>
+
+                        <p>
+                            Descubre electivas, libros y revistas
+                            según tus intereses, historial y rendimiento.
+                        </p>
+
+                        <button onclick="goToSection('recomendaciones')">
+                            Explorar →
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card green-card">
+
+                        <div class="feature-icon">📅</div>
+
+                        <span>02</span>
+
+                        <h3>Generación de horarios</h3>
+
+                        <p>
+                            Arma un horario sin cruces utilizando
+                            un algoritmo de Backtracking.
+                        </p>
+
+                        <button onclick="goToSection('horarios')">
+                            Crear horario →
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card purple-card">
+
+                        <div class="feature-icon">💡</div>
+
+                        <span>03</span>
+
+                        <h3>Apoyo académico</h3>
+
+                        <p>
+                            Resuelve dudas, genera resúmenes y
+                            encuentra material relacionado.
+                        </p>
+
+                        <button onclick="goToSection('apoyo')">
+                            Ir al apoyo →
+                        </button>
+
+                    </article>
+
+
+                    <article class="feature-card profile-mini-card">
+
+                        <div class="feature-icon">🎓</div>
+
+                        <span>PERFIL ACADÉMICO</span>
+
+                        <h3 id="homeCareer">
+                            Ingeniería de Sistemas
+                        </h3>
+
+                        <div class="progress-bar">
+                            <span id="profileProgress"></span>
+                        </div>
+
+                        <small id="progressText">70% perfil completado</small>
+
+                        <p class="quote">
+                            “Disciplina hoy,<br>
+                            libertad mañana.”
+                        </p>
+
+                    </article>
+
+                </div>
+
+
+                <!-- PIPELINE -->
+
+                <div class="pipeline-section">
+
+                    <div class="section-title">
+
+                        <div>
+                            <span>FLUJO CONTINUO</span>
+                            <h2>Tu ciclo académico en un solo lugar</h2>
+                        </div>
+
+                    </div>
+
+                    <div class="pipeline">
+
+                        <div class="pipeline-step">
+                            <div>01</div>
+                            <strong>Conoce tu perfil</strong>
+                            <small>Intereses + notas</small>
+                        </div>
+
+                        <i>→</i>
+
+                        <div class="pipeline-step">
+                            <div>02</div>
+                            <strong>Elige mejor</strong>
+                            <small>Materias + libros</small>
+                        </div>
+
+                        <i>→</i>
+
+                        <div class="pipeline-step">
+                            <div>03</div>
+                            <strong>Organiza</strong>
+                            <small>Horario sin cruces</small>
+                        </div>
+
+                        <i>→</i>
+
+                        <div class="pipeline-step">
+                            <div>04</div>
+                            <strong>Refuerza</strong>
+                            <small>Apoyo académico</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- RECOMENDACIONES -->
+            <!-- ================================================= -->
+
+            <section id="recomendaciones" class="section">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="page-kicker">ORIENTACIÓN PERSONALIZADA</span>
+
+                        <h1>Recomendaciones personalizadas</h1>
+
+                        <p>
+                            Basadas en tus intereses, historial académico y notas.
+                        </p>
+                    </div>
+
+                    <label class="switch-label">
+                        Coincidencia según tu perfil
+                        <input
+                            type="checkbox"
+                            id="recommendationMode"
+                            checked
+                        >
+                        <span class="switch"></span>
+                    </label>
+
+                </div>
+
+
+                <div class="tabs">
+
+                    <button class="tab active" data-tab="materias">
+                        Materias
+                    </button>
+
+                    <button class="tab" data-tab="libros">
+                        Libros
+                    </button>
+
+                    <button class="tab" data-tab="revistas">
+                        Revistas científicas
+                    </button>
+
+                </div>
+
+
+                <div class="recommendation-layout">
+
+                    <aside class="profile-panel">
+
+                        <div class="panel-heading">
+                            <span>◉</span>
+                            <div>
+                                <strong>Tus intereses</strong>
+                                <small>Selecciona tus áreas</small>
+                            </div>
+                        </div>
+
+                        <div class="interest-grid">
+
+                            <label>
+                                <input type="checkbox" value="tecnologia" checked>
+                                Tecnología
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="diseno">
+                                Diseño
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="naturaleza">
+                                Naturaleza
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="musica">
+                                Música
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="lectura">
+                                Lectura
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="programacion" checked>
+                                Programación
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="ia">
+                                Inteligencia Artificial
+                            </label>
+
+                            <label>
+                                <input type="checkbox" value="datos">
+                                Datos
+                            </label>
+
+                        </div>
+
+
+                        <div class="panel-heading history-heading">
+                            <span>▣</span>
+                            <div>
+                                <strong>Tu historial académico</strong>
+                                <small>Notas registradas</small>
+                            </div>
+                        </div>
+
+                        <div id="gradesList" class="grades-list">
+
+                            <div>
+                                <span>Fundamentos de Ing. de Sistemas</span>
+                                <b>17.5</b>
+                            </div>
+
+                            <div>
+                                <span>Programación</span>
+                                <b>18.3</b>
+                            </div>
+
+                            <div>
+                                <span>Cálculo I</span>
+                                <b>18.0</b>
+                            </div>
+
+                            <div>
+                                <span>Inglés</span>
+                                <b>19.0</b>
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="small-action"
+                            onclick="abrirModalNota()"
+                        >
+                            + Agregar nota
+                        </button>
+
+                        <div class="profile-alert">
+                            💡 Si tu nota en un área está por debajo
+                            del umbral, PlanUCV prioriza recursos introductorios.
+                        </div>
+
+                    </aside>
+
+
+                    <div class="recommendation-content">
+
+                        <div id="materiasTab" class="tab-content active">
+
+                            <div class="result-heading">
+
+                                <div>
+                                    <span>RECOMENDACIÓN ALGORÍTMICA</span>
+                                    <h2>Materias recomendadas</h2>
+                                </div>
+
+                                <button
+                                    class="refresh-btn"
+                                    onclick="generarRecomendaciones()"
+                                >
+                                    ↻ Actualizar
+                                </button>
+
+                            </div>
+
+                            
+                            <div class="subject-search">
+                               <input
+                                  type="search"
+                                  id="subjectSearch"
+                                  placeholder="Buscar una materia o tema..."
+                                  onkeydown="if(event.key === 'Enter') buscarMateria()"
+                                />
+                               <button type="button" onclick="buscarMateria()">
+                                   Buscar
+                               </button>
+                            </div>
+
+                            <div id="subjectRecommendations" class="recommendation-list"></div>
+
+
+                            <div class="subsection-title">
+                                Libros recomendados
+                            </div>
+
+                            <div id="bookPreview" class="book-row"></div>
+
+                        </div>
+
+
+                        <div id="librosTab" class="tab-content">
+
+                            <div class="result-heading">
+
+                                <div>
+                                    <span>BIBLIOTECA DIGITAL</span>
+                                    <h2>Libros recomendados</h2>
+                                </div>
+
+                                <button
+                                    class="btn-primary small"
+                                    onclick="buscarLibros()"
+                                >
+                                    Buscar libros
+                                </button>
+
+                            </div>
+
+                            <div class="search-inline">
+
+                                <input
+                                    id="bookSearch"
+                                    type="text"
+                                    placeholder="Ej. inteligencia artificial"
+                                >
+
+                                <button onclick="buscarLibros()">
+                                    Buscar
+                                </button>
+
+                            </div>
+
+                            <div id="bookResults" class="resource-grid">
+
+                                <div class="empty-box">
+                                    📚
+                                    <strong>Busca libros académicos</strong>
+                                    <span>
+                                        PlanUCV consulta Google Books mediante
+                                        una API pública.
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div id="revistasTab" class="tab-content">
+
+                            <div class="result-heading">
+
+                                <div>
+                                    <span>LITERATURA CIENTÍFICA</span>
+                                    <h2>Revistas y artículos científicos</h2>
+                                </div>
+
+                                <button
+                                    class="btn-primary small"
+                                    onclick="buscarArticulos()"
+                                >
+                                    Buscar artículos
+                                </button>
+
+                            </div>
+
+                            <div class="search-inline">
+
+                                <input
+                                    id="articleSearch"
+                                    type="text"
+                                    placeholder="Ej. inteligencia artificial educación"
+                                >
+
+                                <button onclick="buscarArticulos()">
+                                    Buscar
+                                </button>
+
+                            </div>
+
+                            <div id="articleResults" class="resource-grid">
+
+                                <div class="empty-box">
+                                    🔬
+                                    <strong>Explora literatura científica</strong>
+                                    <span>
+                                        PlanUCV consulta OpenAlex.
+                                    </span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- HORARIOS -->
+            <!-- ================================================= -->
+
+            <section id="horarios" class="section">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="page-kicker">PLANIFICACIÓN</span>
+
+                        <h1>Generación de horario</h1>
+
+                        <p>
+                            Agrega tus materias, define restricciones
+                            y encuentra combinaciones sin cruces.
+                        </p>
+                    </div>
+
+                    <button
+                        class="btn-primary"
+                        onclick="generarHorarios()"
+                    >
+                        ✨ Generar horario
+                    </button>
+
+                </div>
+
+
+                <div class="steps-indicator">
+
+                    <div class="step active">
+                        <span>1</span>
+                        Materias
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step">
+                        <span>2</span>
+                        Restricciones
+                    </div>
+
+                    <div class="line"></div>
+
+                    <div class="step">
+                        <span>3</span>
+                        Resultados
+                    </div>
+
+                </div>
+
+
+                <div class="schedule-layout">
+
+                    <div class="schedule-card-panel">
+
+                        <div class="card-title">
+                            <div>
+                                <span>1.</span>
+                                <strong>AGREGAR MATERIAS</strong>
+                            </div>
+                        </div>
+
+                        <div class="course-group" id="courseGroup">
+                        </div>
+
+                        <button
+                            type="button"
+                            class="add-course-inline"
+                            onclick="abrirModalCurso()"
+                        >
+                            + Agregar otra materia
+                        </button>
+
+                    </div>
+
+
+                    <div class="schedule-card-panel">
+
+                        <div class="card-title">
+                            <div>
+                                <span>2.</span>
+                                <strong>Define tus restricciones</strong>
+                            </div>
+                        </div>
+
+                        <label class="restriction-option">
+                            <span>🚫</span>
+                            No vienes por la tarde
+                            <input type="checkbox" id="noTarde">
+                        </label>
+
+                        <label class="restriction-option">
+                            <span>🧩</span>
+                            Evitar huecos entre clases
+                            <input type="checkbox" id="sinHuecos">
+                        </label>
+
+                        <label class="restriction-option">
+                            <span>🌅</span>
+                            No quieres clases muy temprano
+                            <input type="checkbox" id="noTemprano">
+                        </label>
+
+                        <label class="restriction-option">
+                            <span>📅</span>
+                            Límite de clases por día
+
+                            <select id="maxClasesDia">
+                                <option value="4">Máx. 4</option>
+                                <option value="5">Máx. 5</option>
+                                <option value="6">Máx. 6</option>
+                            </select>
+
+                        </label>
+
+                        <div class="days-block">
+
+                            <span>Días no disponibles</span>
+
+                            <div class="days-checks">
+
+                                <label>
+                                    <input type="checkbox" id="noLunes">
+                                    Lun
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="noMartes">
+                                    Mar
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="noMiercoles">
+                                    Mié
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="noJueves">
+                                    Jue
+                                </label>
+
+                                <label>
+                                    <input type="checkbox" id="noViernes">
+                                    Vie
+                                </label>
+
+                            </div>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="btn-primary full"
+                            onclick="generarHorarios()"
+                        >
+                            Generar horario →
+                        </button>
+
+                    </div>
+
+
+                    <div class="schedule-card-panel result-schedule-panel">
+
+                        <div class="card-title result-title">
+
+                            <div>
+                                <span>3.</span>
+                                <strong>Resultados</strong>
+                            </div>
+
+                            <span
+                                id="scheduleCounter"
+                                class="counter"
+                            >
+                                Opción 1
+                            </span>
+
+                        </div>
+
+                        <div id="scheduleStatus" class="schedule-status">
+                            Agrega tus materias y genera un horario.
+                        </div>
+
+                        <div id="scheduleOptions">
+
+                            <div class="schedule-placeholder">
+                                📅
+                                <strong>Aún no has generado un horario</strong>
+                                <span>
+                                    El algoritmo buscará combinaciones
+                                    sin cruces.
+                                </span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="algorithm-info">
+
+                    <div class="algorithm-icon">🌳</div>
+
+                    <div>
+                        <strong>¿Qué ocurre detrás de PlanUCV?</strong>
+
+                        <p>
+                            El generador utiliza <b>Backtracking</b>.
+                            Explora las combinaciones como un árbol y,
+                            cuando detecta un conflicto, descarta esa rama
+                            y vuelve al paso anterior para probar otra opción.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- APOYO ACADÉMICO -->
+            <!-- ================================================= -->
+
+            <section id="apoyo" class="section">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="page-kicker">APOYO ACADÉMICO</span>
+
+                        <h1>Resuelve tus dudas</h1>
+
+                        <p>
+                            Busca un tema, genera una explicación y encuentra
+                            recursos para reforzar lo aprendido.
+                        </p>
+                    </div>
+
+                    <span class="free-badge">
+                        ✓ Recursos gratuitos
+                    </span>
+
+                </div>
+
+
+                <div class="academic-search">
+
+                    <div class="search-tabs">
+
+                        <button class="academic-tab active">
+                            Buscar materia
+                        </button>
+
+                        <button class="academic-tab">
+                            Buscar tema
+                        </button>
+
+                        <button class="academic-tab">
+                            Generar resumen
+                        </button>
+
+                        <button class="academic-tab">
+                            Explicación sencilla
+                        </button>
+
+                    </div>
+
+                    <div class="big-search">
+
+                        <span>⌕</span>
+
+                        <input
+                            id="academicSearch"
+                            type="text"
+                            placeholder="Ej. Inteligencia Artificial, Bases de Datos, Redes Neuronales..."
+                        >
+
+                        <button onclick="buscarTemaAcademico()">
+                            Buscar
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="academic-grid">
+
+                    <div class="academic-results">
+
+                        <div class="academic-box-title">
+                            <span>RESULTADOS</span>
+                            <h2>Temas relacionados</h2>
+                        </div>
+
+                        <div id="academicResults">
+
+                            <button
+                                class="topic-card"
+                                onclick="seleccionarTema('Inteligencia Artificial')"
+                            >
+
+                                <div class="topic-icon">🧠</div>
+
+                                <div>
+                                    <strong>Inteligencia Artificial</strong>
+                                    <small>
+                                        Sistemas · Tecnología · Programación
+                                    </small>
+                                </div>
+
+                                <span>→</span>
+
+                            </button>
+
+
+                            <button
+                                class="topic-card"
+                                onclick="seleccionarTema('Redes Neuronales')"
+                            >
+
+                                <div class="topic-icon">🕸️</div>
+
+                                <div>
+                                    <strong>Redes Neuronales</strong>
+                                    <small>
+                                        IA · Machine Learning
+                                    </small>
+                                </div>
+
+                                <span>→</span>
+
+                            </button>
+
+
+                            <button
+                                class="topic-card"
+                                onclick="seleccionarTema('Bases de Datos')"
+                            >
+
+                                <div class="topic-icon">🗄️</div>
+
+                                <div>
+                                    <strong>Bases de Datos</strong>
+                                    <small>
+                                        SQL · Información · Sistemas
+                                    </small>
+                                </div>
+
+                                <span>→</span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-box">
+
+                        <div class="academic-box-title">
+                            <span>RESUMEN DEL TEMA</span>
+
+                            <h2 id="summaryTitle">
+                                Redes Neuronales
+                            </h2>
+                        </div>
+
+                        <div id="summaryContent" class="summary-content">
+
+                            <p>
+                                Las redes neuronales artificiales son modelos
+                                computacionales inspirados en la forma en que
+                                se conectan las neuronas biológicas.
+                            </p>
+
+                            <p>
+                                Están formadas por capas de nodos que procesan
+                                información y ajustan sus parámetros mediante
+                                algoritmos de aprendizaje.
+                            </p>
+
+                            <div class="summary-highlight">
+                                💡 <strong>Idea clave:</strong>
+                                una red neuronal aprende patrones a partir
+                                de ejemplos.
+                            </div>
+
+                        </div>
+
+                        <button
+                            class="summary-button"
+                            onclick="generarResumenCompleto()"
+                        >
+                            ✨ Ver resumen completo
+                        </button>
+
+                    </div>
+
+
+                    <div class="support-box">
+
+                        <div class="academic-box-title">
+                            <span>MATERIAL DE APOYO</span>
+                            <h2>Recursos</h2>
+                        </div>
+
+                        <button onclick="buscarVideos()">
+                            ▶️
+                            <span>
+                                <strong>Video explicativo</strong>
+                                <small>Buscar en YouTube</small>
+                            </span>
+                            →
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- NAVEGADOR ACADÉMICO -->
+
+                <div class="browser-section">
+
+                    <div class="academic-box-title">
+                        <span>NAVEGADOR ACADÉMICO</span>
+                        <h2>Investiga sin salir de PlanUCV</h2>
+                    </div>
+
+                    <div class="browser-window">
+
+                        <div class="browser-toolbar">
+
+                            <div class="browser-dots">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+
+                            <div class="browser-address">
+
+                                <span>🔒</span>
+
+                                <form
+                                    action="https://www.google.com/search"
+                                    method="GET"
+                                    target="googleBrowser"
+                                >
+
+                                    <input
+                                        type="hidden"
+                                        name="igu"
+                                        value="1"
+                                    >
+
+                                    <input
+                                        type="hidden"
+                                        name="hl"
+                                        value="es"
+                                    >
+
+                                    <input
+                                        id="googleBrowserSearch"
+                                        type="text"
+                                        name="q"
+                                        placeholder="Buscar en Google..."
+                                        autocomplete="off"
+                                    >
+
+                                    <button
+                                        type="submit"
+                                        title="Buscar en Google"
+                                    >
+                                        🔍
+                                    </button>
+
+                                </form>
+
+                            </div>
+
+                        </div>
+
+                        <iframe
+                            name="googleBrowser"
+                            id="googleBrowser"
+                            src="https://www.google.com/search?igu=1&hl=es"
+                            title="Navegador de Google"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                        ></iframe>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================================= -->
+            <!-- PERFIL -->
+            <!-- ================================================= -->
+
+            <section id="perfil" class="section">
+
+                <div class="page-header">
+
+                    <div>
+                        <span class="page-kicker">MI CUENTA</span>
+
+                        <h1>Mi perfil académico</h1>
+
+                        <p>
+                            Personaliza tus datos para mejorar las recomendaciones.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="profile-page">
+
+                    <div class="large-profile-card">
+
+<div class="large-avatar" id="largeAvatar">
+    <img
+        id="profilePhoto"
+        src="https://placehold.co/140x140/e8eefc/3157a4?text=Foto"
+        alt="Foto de perfil"
+    >
+</div>
+
+<label for="profilePhotoInput" class="profile-photo-button">
+    📷 Cambiar foto
+</label>
+
+<input
+    type="file"
+    id="profilePhotoInput"
+    accept="image/*"
+    hidden
+    onchange="cambiarFotoPerfil(event)"
+>
+
+
+                        <h2 id="profileDisplayName">
+                            Rosa
+                        </h2>
+
+                        <p id="profileDisplayCareer">
+                            Ingeniería de Sistemas
+                        </p>
+
+                        <span class="profile-status">
+                            ● Perfil activo
+                        </span>
+
+                    </div>
+
+
+                    <div class="profile-form-card">
+
+                        <h2>Información personal</h2>
+
+                        <label>
+                            Nombre completo
+
+                            <input
+                                id="profileName"
+                                type="text"
+                                value="Rosa"
+                            >
+                        </label>
+
+                        <label>
+                            Carrera
+
+                            <input
+                                id="profileCareer"
+                                type="text"
+                                value="Ingeniería de Sistemas"
+                            >
+                        </label>
+
+                        <label>
+                            Universidad
+
+                            <input
+                                id="profileUniversity"
+                                type="text"
+                                placeholder="Ej. Universidad César Vallejo"
+                            >
+                        </label>
+
+                        <label>
+                            Semestre
+
+                            <select id="profileSemester">
+                                <option>1.er ciclo</option>
+                                <option>2.º ciclo</option>
+                                <option>3.er ciclo</option>
+                                <option>4.º ciclo</option>
+                                <option>5.º ciclo</option>
+                                <option>6.º ciclo</option>
+                                <option>7.º ciclo</option>
+                                <option>8.º ciclo</option>
+                                <option>9.º ciclo</option>
+                                <option>10.º ciclo</option>
+                            </select>
+
+                        </label>
+
+                        <button
+                            class="btn-primary"
+                            type="button"
+                            onclick="guardarPerfil()"
+                        >
+                            Guardar cambios
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MODAL CURSO -->
+    <!-- ================================================= -->
+
+    <div id="courseModal" class="modal">
+
+        <div class="modal-content">
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="cerrarModalCurso()"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">📚</div>
+
+            <h2>Agregar materia</h2>
+
+            <p>
+                Agrega una materia y sus posibles horarios.
+            </p>
+
+            <form
+                id="courseForm"
+                onsubmit="guardarCurso(event)"
+            >
+
+                <label>
+                    Nombre de la materia
+
+                    <input
+                        id="courseName"
+                        type="text"
+                        placeholder="Ej. Matemática Discreta"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Docente
+
+                    <input
+                        id="courseTeacher"
+                        type="text"
+                        placeholder="Ej. Ing. Carlos Pérez"
+                    >
+                </label>
+
+                <div class="two-columns">
+
+                    <label>
+                        Día
+
+                        <select id="courseDay">
+                            <option value="Lunes">Lunes</option>
+                            <option value="Martes">Martes</option>
+                            <option value="Miércoles">Miércoles</option>
+                            <option value="Jueves">Jueves</option>
+                            <option value="Viernes">Viernes</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Hora inicio
+
+                        <select id="courseStart">
+                            <option value="7">7:00</option>
+                            <option value="8">8:00</option>
+                            <option value="9">9:00</option>
+                            <option value="10">10:00</option>
+                            <option value="11">11:00</option>
+                            <option value="12">12:00</option>
+                            <option value="13">13:00</option>
+                            <option value="14">14:00</option>
+                            <option value="15">15:00</option>
+                            <option value="16">16:00</option>
+                            <option value="17">17:00</option>
+                            <option value="18">18:00</option>
+                        </select>
+                    </label>
+
+                </div>
+
+                <label>
+                    Hora fin
+
+                    <select id="courseEnd">
+                        <option value="8">8:00</option>
+                        <option value="9">9:00</option>
+                        <option value="10">10:00</option>
+                        <option value="11">11:00</option>
+                        <option value="12">12:00</option>
+                        <option value="13">13:00</option>
+                        <option value="14">14:00</option>
+                        <option value="15">15:00</option>
+                        <option value="16">16:00</option>
+                        <option value="17">17:00</option>
+                        <option value="18">18:00</option>
+                        <option value="19">19:00</option>
+                        <option value="20">20:00</option>
+                    </select>
+                </label>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn-soft"
+                        onclick="cerrarModalCurso()"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-primary"
+                    >
+                        Agregar materia
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- MODAL NOTA -->
+    <!-- ================================================= -->
+
+    <div id="gradeModal" class="modal">
+
+        <div class="modal-content small-modal">
+
+            <button
+                type="button"
+                class="modal-close"
+                onclick="cerrarModalNota()"
+            >
+                ×
+            </button>
+
+            <div class="modal-icon">📊</div>
+
+            <h2>Agregar nota</h2>
+
+            <p>
+                Añade una nota para mejorar el análisis del perfil.
+            </p>
+
+            <form id="gradeForm">
+
+                <label>
+                    Curso
+
+                    <input
+                        id="gradeName"
+                        type="text"
+                        placeholder="Ej. Programación"
+                        required
+                    >
+                </label>
+
+                <label>
+                    Nota
+
+                    <input
+                        id="gradeValue"
+                        type="number"
+                        min="0"
+                        max="20"
+                        step="0.1"
+                        placeholder="18"
+                        required
+                    >
+                </label>
+
+                <div class="modal-actions">
+
+                    <button
+                        type="button"
+                        class="btn-soft"
+                        onclick="cerrarModalNota()"
+                    >
+                        Cancelar
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn-primary"
+                    >
+                        Guardar nota
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- TOAST -->
+    <!-- ================================================= -->
+
+    <div id="toast" class="toast">
+        <span>✓</span>
+        <p id="toastMessage">Guardado correctamente</p>
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- NOTIFICACIONES -->
+    <!-- ================================================= -->
+
+    <div
+        id="notificationPanel"
+        class="notification-panel"
+    ></div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
